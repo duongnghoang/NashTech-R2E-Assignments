@@ -1,6 +1,6 @@
 ﻿namespace Day1.Entities
 {
-    public class Car
+    internal class Car
     {
         public Car(string make, string model, int year, CarType type)
         {
@@ -20,7 +20,7 @@
         }
     }
 
-    public enum CarType
+    internal enum CarType
     {
         Electric,
         Fuel,

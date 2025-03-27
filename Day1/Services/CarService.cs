@@ -37,7 +37,7 @@ namespace Day1.Services
                 "Invalid model! Try again:"
                 );
 
-            int year = InputUtils.GetUserIntInput(
+            int year = InputUtils.GetUserYearInput(
                 "Enter Year:", 
                 "Invalid year! Try again:"
                 );
@@ -59,7 +59,7 @@ namespace Day1.Services
                 "Enter Make:",
                 "Input cannot be empty! Try again:"
                 );
-            Car? car =  _cars.FirstOrDefault(car => car.Make == make) ?? null;
+            Car? car =  _cars.FirstOrDefault(car => car.Make!.Equals(make, StringComparison.OrdinalIgnoreCase)) ?? null;
             if (car != null)
             {
                 Console.WriteLine(car);

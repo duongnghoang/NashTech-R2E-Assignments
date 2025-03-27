@@ -42,6 +42,28 @@ public static class InputUtils
         {
             Console.WriteLine(invalidMessage);
             input = Console.ReadLine();
+            
+        }
+        return number;
+    }
+
+    /// <summary>
+    /// Handles input and output for year input
+    /// User is required to input string until valid
+    /// </summary>
+    /// <param name="message">Represent title input request message to console</param>
+    /// <param name="invalidMessage">Represent input invalid message (currently 1)</param>
+    /// <returns>The year value of user input</returns>
+    public static int GetUserYearInput(string message, string invalidMessage)
+    {
+        Console.WriteLine(message);
+        string? input = Console.ReadLine();
+        var currentYear = DateTime.UtcNow.Year;
+        int number;
+        while (!int.TryParse(input, out number) || number > currentYear || number <= 1900)
+        {
+            Console.WriteLine(invalidMessage);
+            input = Console.ReadLine();
         }
         return number;
     }
