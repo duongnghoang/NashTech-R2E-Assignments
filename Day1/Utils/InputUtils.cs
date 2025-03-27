@@ -59,7 +59,7 @@ public static class InputUtils
         Console.WriteLine(message);
         string? input = Console.ReadLine();
         TEnum resultEnum;
-        while (!Enum.TryParse(input, true, out resultEnum))
+        while (!Enum.TryParse(input, true, out resultEnum) || !Enum.IsDefined(typeof(TEnum), input))
         {
             Console.WriteLine(invalidMessage);
             input = Console.ReadLine();
