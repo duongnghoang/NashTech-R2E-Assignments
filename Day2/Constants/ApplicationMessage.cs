@@ -19,5 +19,7 @@ public class ApplicationMessage
     public const string InvalidRefuelCharge = "Invalid choice! Please enter 'Y' for Yes and 'N' for No.";
     public static string InvalidMaintenanceDate(DateTime validStartDate, DateTime validEndDate) =>
         $"Invalid maintenance date! Please enter a valid date between {validStartDate:yyyy-MM-dd} and {validEndDate:yyyy-MM-dd}.";
+    public static string InvalidRefuelChargeDate(DateTime validStartDate, DateTime validEndDate) =>
+        $"Invalid refuel, charge date! Please enter a valid date between {validStartDate:yyyy-MM-dd} and {validEndDate:yyyy-MM-dd}.";
     public static string InvalidDateMessage(string dateFormat) => $"Invalid date format! Please enter a valid date {dateFormat}.";
 }

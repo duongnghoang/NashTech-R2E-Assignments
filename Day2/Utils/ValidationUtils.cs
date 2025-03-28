@@ -38,8 +38,8 @@ public static class ValidationUtils
     /// <returns>True if the input is a valid date; otherwise, false.</returns>
     public static bool IsValidDate(string? input, string dateFormat)
         => DateTime.TryParseExact(input, dateFormat, CultureInfo.InvariantCulture,
-            DateTimeStyles.AssumeUniversal, out var date)
-            && DateTime.Compare(DateTime.UtcNow, date) >= 0;
+            DateTimeStyles.AssumeUniversal, out var date);
+            //&& DateTime.Compare(DateTime.UtcNow, date) >= 0;
 
     /// <summary>
     /// Validates if the input is a valid date in the specified format within the specified date range.
