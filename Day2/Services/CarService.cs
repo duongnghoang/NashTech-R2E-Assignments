@@ -26,11 +26,10 @@ namespace Day2.Services
                 ApplicationMessage.InvalidYear
             );
 
-            DateTime lastMaintenanceDate = InputUtils.GetUserDateTimeInput(
+            DateTime lastMaintenanceDate = InputUtils.GetUserMaintenanceDateInput(
                 ApplicationMessage.InputMaintenanceDate(DateFormat.IsoDate),
                 DateFormat.IsoDate,
-                new DateTime(year, 1, 1),
-                DateTime.UtcNow
+                year
             );
 
             var carType = InputUtils.GetUserChoice(
@@ -44,6 +43,8 @@ namespace Day2.Services
             }
             return new FuelCar(make, model, year, lastMaintenanceDate);
         }
+
+        public void ShowCarDetails(Car car) => car.DisplayDetails();
 
         public void RefuelOrChargeCar(Car car)
         {

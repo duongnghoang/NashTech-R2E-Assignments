@@ -11,6 +11,7 @@ public class Program
     {
         CarService carService = new CarService(); 
         var car = carService.GetUserCar();
+        carService.ShowCarDetails(car);
         carService.RefuelOrChargeCar(car);
     }
 }
